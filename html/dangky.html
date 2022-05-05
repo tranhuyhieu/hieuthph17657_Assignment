@@ -1,0 +1,83 @@
+<div class="row bg-white pt-3">
+            
+    <div class="col-3"></div>
+    <div class="col-6">
+        <div class="card mb-3" ng-init="student.gender='true';student.marks='0'">
+          <form class="card-body  ms-5 me-5" name="frmdangky" ng-submit="onSubmitForm($event)">
+                <div class="row text-center">
+                <p><b> Đăng ký miễn phí!</b></p><p>Tài khoản:</p>
+                </div>
+                <div class="row mt-3">
+                    <input type="text" ng-model="student.fullname" name="txtFullname" class=" form-control" placeholder="Họ tên" required>
+                    <small ng-hide="frmdangky.txtFullname.$valid || frmdangky.txtFullname.$untouched" class="text-danger">Không được để trống</small>
+                
+                </div>
+                <div class="row mt-3">
+                    <input type="email" ng-model="student.email" name="email" class="form-control" placeholder="Email" required>
+                    <div ng-hide="frmdangky.email.$valid || frmdangky.email.$untouched" class="text-danger">
+                      <small ng-show="frmdangky.email.$error.required">Không được để trống</small>
+                      <small ng-show="frmdangky.email.$error.email">Không đúng định dạng email</small>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                  <input type="text" ng-model="student.username" name="txtUsername" class=" form-control" placeholder="Username" required minlength="6">
+                  <div ng-hide="frmdangky.txtUsername.$valid || frmdangky.txtUsername.$untouched" class="text-danger">
+                  <small ng-show="frmdangky.txtUsername.$error.required" class="text-danger">Không được để trống</small>
+                  <small ng-show="frmdangky.txtUsername.$error.minlength" ng-hide="frmdangky.txtUsername.$error.required" class="form-text text-danger">Tên tài khoản phải hơn 6 kí tự</small>
+                  </div>
+              </div>
+                <div class="row mt-3">
+                    <input type="password" ng-model="student.password" name="password" class="form-control" placeholder="Mật khẩu" required minlength="6">
+                    <div ng-hide="frmdangky.password.$valid || frmdangky.password.$untouched" class="text-danger">
+                    <small ng-show="frmdangky.password.$error.required" class="text-danger">Không được để trống</small>
+                    <small ng-show="frmdangky.password.$error.minlength" ng-hide="frmdangky.password.$error.required" class="form-text text-danger">Mật khẩu phải hơn 6 kí tự</small>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <input type="password" ng-model="xacnhan" name="xacnhan" class="form-control" placeholder="Xác nhận mật khẩu" required 
+                    check-password>
+                    <div ng-hide="frmdangky.xacnhan.$valid || frmdangky.xacnhan.$untouched" class="text-danger">
+                    <small ng-show="frmdangky.xacnhan.$error.required" class="text-danger">Không được để trống</small>
+                    <small ng-show="frmdangky.xacnhan.$error.check_pwd" ng-hide="frmdangky.xacnhan.$error.required" class="text-danger">Mật khẩu nhập lại không khớp</small>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                  <label for="">Giới tính:</label>
+                  <div class="form-check form-check-inline">
+                      <input ng-model="student.gender" type="radio" class="form-check-input" id="gender" name="gender" value="true">
+                      <label class="form-check-label" for="gender">Nam</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                      <input ng-model="student.gender" type="radio" class="form-check-input" id="gender2" name="gender" value="false">
+                      <label class="form-check-label" for="gender2">Nữ</label>
+                  </div>
+                </div>
+                <div class="row mt-3 text-start">
+                    <input name="birthday" ng-model="student.birthday" type="text" id="birthday" class="form-control border-indigo" placeholder="Ngày sinh(yyyy-mm-dd)" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" required>
+                    <div ng-hide="frmdangky.birthday.$valid || frmdangky.birthday.$untouched" class="text-danger">
+                      <small ng-show="frmdangky.birthday.$error.required" class="text-danger">Không được để trống</small>
+                      <small ng-show="frmdangky.birthday.$error.pattern" ng-hide="frmdangky.birthday.$error.required" class="form-text text-danger">Không đúng định dạng ngày sinh</small>
+                      </div>
+                </div>
+
+                <div class="row mt-3">
+                    <input name="schoolfee" ng-model="student.schoolfee" type="number" id="schoolfee" class="form-control border-indigo" placeholder="Học phí" required min="2000000">
+                    <div ng-hide="frmdangky.schoolfee.$valid || frmdangky.schoolfee.$untouched" class="text-danger">
+                      <small ng-show="frmdangky.schoolfee.$error.required" class="text-danger">Không được để trống</small>
+                      <small ng-show="frmdangky.schoolfee.$error.min" ng-hide="frmdangky.schoolfee.$error.required" class="text-danger">Học phí phải hơn 2 triệu</small>
+                      </div>
+                </div>
+                <div class="row mt-4">
+                    <button  class="btn btn-danger" ng-disabled="frmdangky.$invalid">Đăng ký</button>
+                </div>
+                <div class="row mt-3">
+                    <p>Đã có tài khoản?
+                    <a class="text-decoration-none" href="dangnhap.html">Đăng nhập</a>
+                    </p>
+                </div>
+          </form>
+          
+        </div>
+    </div>
+    <div class="col-3"></div>
+</div>

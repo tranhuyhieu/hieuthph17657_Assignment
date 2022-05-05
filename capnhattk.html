@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LAB01</title>
+    <!-- Style -->
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <script src="js/angularjs.min.js"></script>
+</head>
+<body ng-app="myapp">
+  <div class="container" ng-controller="myContrl">
+        <header class="row bg-white">
+            <div id="carouselExampleControls" class="carousel slide p-0" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img class="d-block w-100" src="images/banner1.jpg" alt="First slide">
+                  </div>
+                  <div class="carousel-item">
+                    <img class="d-block w-100" src="images/banner2.jpg" alt="Second slide">
+                  </div>
+                  <div class="carousel-item">
+                    <img class="d-block w-100" src="images/banner3.jpg" alt="Third slide">
+                  </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </a>
+              </div>
+            
+        </header>
+        <nav class="row navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="index.html">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
+                            <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z"/>
+                          </svg>
+                        Trang chủ</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="gioithieu.html">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list-ul" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm-3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+                          </svg>
+                        Giới thiệu</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="lienhe.html">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone-fill" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
+                          </svg>
+                        Liên hệ</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="gopy.html">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-fill" viewBox="0 0 16 16">
+                            <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z"/>
+                          </svg>
+                        Góp ý</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-question-circle-fill" viewBox="0 0 16 16">
+                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.496 6.033h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286a.237.237 0 0 0 .241.247zm2.325 6.443c.61 0 1.029-.394 1.029-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94 0 .533.425.927 1.01.927z"/>
+                          </svg>
+                        Hỏi đáp</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                            <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                          </svg>
+                      Tài khoản
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                      <li><a class="dropdown-item" href="#">Đăng ký</a></li>
+                      <li><a class="dropdown-item" href="dangnhap.html">Đăng nhập</a></li>
+                      <li><a class="dropdown-item" href="#">Quên mật khẩu</a></li>
+                      <div class="dropdown-divider"></div>
+                      <li><a class="dropdown-item" href="#">Đăng xuất</a></li>
+                      <li><a class="dropdown-item" href="#">Đổi mật khẩu</a></li>
+                      <li><a class="dropdown-item" href="#">Cập nhật hồ sơ</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+              
+            </div>
+        </nav>
+        <div class="row bg-white pt-3">
+            
+                <div class="col-3"></div>
+                <div class="col-6">
+                    <div class="card mb-3" >
+                      <form class="card-body ms-5 me-5" name="frmChangeuser">
+                            <div class="row">
+                            <p class="text-center"><b>Cập nhật tài khoản</b></p>
+                            </div>
+                            <div class="row mt-3">
+                              <input type="text" ng-model="student.fullname" name="txtFullname" class=" form-control" placeholder="Họ tên" required>
+                              <small ng-hide="frmChangeuser.txtFullname.$valid || frmChangeuser.txtFullname.$untouched" class="text-danger">Không được để trống</small>
+                            </div>
+                            <div class="row mt-3">
+                                <input type="email" ng-model="student.email" name="email" class="form-control" placeholder="Email" required>
+                                <div ng-hide="frmChangeuser.email.$valid || frmChangeuser.email.$untouched" class="text-danger">
+                                  <small ng-show="frmChangeuser.email.$error.required">Không được để trống</small>
+                                  <small ng-show="frmChangeuser.email.$error.email">Không đúng định dạng email</small>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                              <input type="text" ng-model="student.username" name="txtUsername" class=" form-control" placeholder="Username" required minlength="6">
+                              <div ng-hide="frmChangeuser.txtUsername.$valid || frmChangeuser.txtUsername.$untouched" class="text-danger">
+                              <small ng-show="frmChangeuser.txtUsername.$error.required" class="text-danger">Không được để trống</small>
+                              <small ng-show="frmChangeuser.txtUsername.$error.minlength" ng-hide="frmChangeuser.txtUsername.$error.required" class="form-text text-danger">Tên tài khoản phải hơn 6 kí tự</small>
+                              </div>
+                          </div>
+                            <div class="row mt-3">
+                                <input type="password" ng-model="student.password" name="password" class="form-control" placeholder="Mật khẩu" required minlength="6">
+                                <div ng-hide="frmChangeuser.password.$valid || frmChangeuser.password.$untouched" class="text-danger">
+                                <small ng-show="frmChangeuser.password.$error.required" class="text-danger">Không được để trống</small>
+                                <small ng-show="frmChangeuser.password.$error.minlength" ng-hide="frmChangeuser.password.$error.required" class="form-text text-danger">Mật khẩu phải hơn 6 kí tự</small>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <input type="password" ng-model="xacnhan" name="xacnhan" class="form-control" placeholder="Xác nhận mật khẩu" required 
+                                check-password>
+                                <div ng-hide="frmChangeuser.xacnhan.$valid || frmChangeuser.xacnhan.$untouched" class="text-danger">
+                                <small ng-show="frmChangeuser.xacnhan.$error.required" class="text-danger">Không được để trống</small>
+                                <small ng-show="frmChangeuser.xacnhan.$error.check_pwd" ng-hide="frmChangeuser.xacnhan.$error.required" class="text-danger">Mật khẩu nhập lại không khớp</small>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                              <label for="">Giới tính:</label>
+                              <div class="form-check form-check-inline">
+                                  <input ng-model="student.gender" type="radio" class="form-check-input" id="gender" name="gender" value="true">
+                                  <label class="form-check-label" for="gender">Nam</label>
+                              </div>
+                              <div class="form-check form-check-inline">
+                                  <input ng-model="student.gender" type="radio" class="form-check-input" id="gender2" name="gender" value="false">
+                                  <label class="form-check-label" for="gender2">Nữ</label>
+                              </div>
+                            </div>
+                            <div class="row mt-3 text-start">
+                                <input name="birthday" ng-model="student.birthday" type="text" id="birthday" class="form-control border-indigo" placeholder="Ngày sinh(yyyy-mm-dd)" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" required>
+                                <div ng-hide="frmChangeuser.birthday.$valid || frmChangeuser.birthday.$untouched" class="text-danger">
+                                  <small ng-show="frmChangeuser.birthday.$error.required" class="text-danger">Không được để trống</small>
+                                  <small ng-show="frmChangeuser.birthday.$error.pattern" ng-hide="frmChangeuser.birthday.$error.required" class="form-text text-danger">Không đúng định dạng ngày sinh</small>
+                                  </div>
+                            </div>
+        
+                            <div class="row mt-3">
+                                <input name="schoolfee" ng-model="studentR.schoolfee" type="number" id="schoolfee" class="form-control border-indigo" placeholder="Học phí" required min="2000000">
+                                <div ng-hide="frmChangeuser.schoolfee.$valid || frmChangeuser.schoolfee.$untouched" class="text-danger">
+                                  <small ng-show="frmChangeuser.schoolfee.$error.required" class="text-danger">Không được để trống</small>
+                                  <small ng-show="frmChangeuser.schoolfee.$error.min" ng-hide="frmChangeuser.schoolfee.$error.required" class="text-danger">Học phí phải hơn 2 triệu</small>
+                                  </div>
+                            </div>
+                            <div class="row mt-3 text-center">
+                                <button class="btn btn-info">Cập nhật</button>
+                            </div>
+                            
+                      </form>
+                      
+                    </div>
+                </div>
+                <div class="col-3"></div>
+        </div>
+        <footer class="row bg-secondary p-2">
+               <div class="panel panel-default">
+                    <div class="panel-heading text-center">
+                          <p>HPL - Hiệu Poly &copy; 2022. Test Online.</p>
+                    </div>
+               </div>
+        </footer>
+    </div>
+    <script>
+      const app=angular.module("myapp",[]);
+        const myFunction=function($scope){
+        }
+        app.controller("myContrl",myFunction);
+    </script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>

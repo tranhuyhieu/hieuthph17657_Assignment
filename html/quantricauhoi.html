@@ -1,0 +1,105 @@
+<div class="row bg-white pt-3">
+            
+    <div class="col-1"></div>
+    <div class="col-10">
+        <div class="card mb-3">
+          <form class="card-body  ms-5 me-5" name="frmquantriQS" ng-submit="onSubmitForm($event)">
+                <div class="row text-center">
+                <p><b> Quản trị câu hỏi!</b></p>
+                </div>
+                <div class="row mt-3">
+                    <input type="text" ng-model="questionqt.Text" name="txtText" class="form-control" placeholder="Câu hỏi" required>
+                        <small ng-hide="frmquantriQS.txtText.$valid || frmquantriQS.txtText.$untouched" class="text-danger">Không được để trống</small>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-sm-12 col-md-3">
+                        <input type="text" ng-model="questionqt.Answers[0].Id" name="idDaA" class="form-control" placeholder="Id đáp án A" required>
+                        <small ng-hide="frmquantriQS.idDaA.$valid || frmquantriQS.idDaA.$untouched" class="text-danger">Không được để trống</small>
+                    </div>
+                    <div class="col-sm-12 col-md-9">
+                        <input type="text" ng-model="questionqt.Answers[0].Text" name="txtDaA" class="form-control" placeholder="Đáp án A" required>
+                    <small ng-hide="frmquantriQS.txtDaA.$valid || frmquantriQS.txtDaA.$untouched" class="text-danger">Không được để trống</small>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-sm-12 col-md-3">
+                    <input type="text" ng-model="questionqt.Answers[1].Id" name="idDaB" class="form-control" placeholder="Id đáp án B" required>
+                    <small ng-hide="frmquantriQS.idDaB.$valid || frmquantriQS.idDaB.$untouched" class="text-danger">Không được để trống</small>
+                    </div>
+                    <div class="col-sm-12 col-md-9">
+                    <input type="text" ng-model="questionqt.Answers[1].Text" name="txtDaB" class="form-control" placeholder="Đáp án B" required>
+                    <small ng-hide="frmquantriQS.txtDaB.$valid || frmquantriQS.txtDaB.$untouched" class="text-danger">Không được để trống</small>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-sm-12 col-md-3">
+                    <input type="text" ng-model="questionqt.Answers[2].Id" name="idDaC" class="form-control" placeholder="Id đáp án C" required>
+                    <small ng-hide="frmquantriQS.idDaC.$valid || frmquantriQS.idDaC.$untouched" class="text-danger">Không được để trống</small>
+                    </div>
+                    <div class="col-sm-12 col-md-9">
+                    <input type="text" ng-model="questionqt.Answers[2].Text" name="txtDaC" class="form-control" placeholder="Đáp án C" required>
+                    <small ng-hide="frmquantriQS.txtDaC.$valid || frmquantriQS.txtDaC.$untouched" class="text-danger">Không được để trống</small>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-sm-12 col-md-3">
+                    <input type="text" ng-model="questionqt.Answers[3].Id" name="idDaD" class="form-control" placeholder="Id đáp án D" required>
+                    <small ng-hide="frmquantriQS.idDaD.$valid || frmquantriQS.idDaD.$untouched" class="text-danger">Không được để trống</small>
+                    </div>
+                    <class class="col-sm-12 col-md-9">
+                    <input type="text" ng-model="questionqt.Answers[3].Text" name="txtDaD" class="form-control" placeholder="Đáp án D" required>
+                    <small ng-hide="frmquantriQS.txtDaD.$valid || frmquantriQS.txtDaD.$untouched" class="text-danger">Không được để trống</small>
+                    </class>
+                </div>
+                <div class="row mt-3">
+                  <input type="text" ng-model="questionqt.AnswerId" name="idDaDung" class="form-control" placeholder="Id đáp án đúng" required>
+                    <small ng-hide="frmquantriQS.idDaDung.$valid || frmquantriQS.idDaDung.$untouched" class="text-danger">Không được để trống</small>
+                </div>
+                <div class="row mt-3">
+                    <input name="marks" ng-model="questionqt.Marks" type="text" id="marks" class="form-control border-indigo" placeholder="Điểm" required min="0" max="10">
+                    <div ng-hide="frmquantriQS.marks.$valid || frmquantriQS.marks.$untouched" class="text-danger">
+                      <small ng-show="frmquantriQS.marks.$error.required" class="text-danger">Không được để trống</small>
+                      <small ng-show="frmquantriQS.marks.$error.min" ng-hide="frmquantriQS.marks.$error.required" class="text-danger">Điểm từ 0 đến 10</small>
+                      </div>
+                </div>
+                <div class="form-group mt-3">
+                    <button class="btn btn-info" ng-disabled="frmquantriQS.$invalid" ng-show="index==-1" ng-click="insert()">Thêm</button>
+                    <button class="btn btn-info" ng-disabled="frmquantriQS.$invalid" ng-hide="index==-1" ng-click="update()">Sửa</button>
+                    <button class="btn btn-info" ng-click="cancel()">Hủy</button>
+                    <button class="btn btn-info" ng-click="clear()">Mới</button>
+                </div>
+          </form>
+          <div class="row col-12 table-responsive m-1">
+          <table class="table table-bordered">
+            <tr>
+                <th>Id</th>
+                <th>Câu hỏi</th>
+                <th>Đáp án A</th>
+                <th>Đáp án B</th>
+                <th>Đáp án C</th>
+                <th>Đáp án D</th>
+                <th>Đáp án đúng</th>
+                <th>Điểm</th>
+                <th></th>
+            </tr>
+            <tr ng-repeat="qs in questions">
+                <td>{{qs.Id}}</td>
+                <td>{{qs.Text}}</td>
+                <td>{{qs.Answers[0]}}</td>
+                <td>{{qs.Answers[1]}}</td>
+                <td>{{qs.Answers[2]}}</td>
+                <td>{{qs.Answers[3]}}</td>
+                <td>{{qs.AnswerId}}</td>
+                <td>{{qs.Marks}}</td>
+                <td>
+                    <button class="btn btn-info" ng-click="edit($index)">Sửa</button>
+                    <button class="btn btn-danger" ng-click="onDelete(qs.Id)">Xoá</button>
+                </td>
+            </tr>
+            
+          </table>
+           </div>
+        </div>
+    </div>
+    <div class="col-1"></div>
+</div>

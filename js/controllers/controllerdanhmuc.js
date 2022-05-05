@@ -1,0 +1,25 @@
+function controllerdanhmuc($scope, $http){
+    $scope.list_subject=[];
+    $http.get('db/Subjects.js').then(function(response){
+      $scope.list_subject=response.data;
+      $scope.pageCount=Math.ceil($scope.list_subject.length/4);
+    })
+    $scope.begin=0;
+    $scope.pageCount=Math.ceil($scope.list_subject.length/4);
+    $scope.first=function(){
+        $scope.begin=0;
+    }
+    $scope.prev=function(){
+        if($scope.begin>0){
+            $scope.begin-=4;
+        }
+    }
+    $scope.next=function(){
+        if($scope.begin<($scope.pageCount-1)*4){
+            $scope.begin+=4;
+        }
+    }
+    $scope.last=function(){
+        $scope.begin=($scope.pageCount-1)*4;
+    }
+  };

@@ -1,0 +1,33 @@
+<div class="row bg-white pt-3">
+            
+    <div class="col-3"></div>
+    <div class="col-6">
+        <div class="card mb-3" >
+          <form class="card-body ms-5 me-5" name="frmForgetpass">
+                <div class="row">
+                <p class="text-center"><b> Quên mật khẩu</b></p>
+                </div>
+                <div class="row mt-3">
+                  <input type="email" ng-model="student.email" name="email" class="form-control" placeholder="Email" required>
+                  <div ng-hide="frmForgetpass.email.$valid || frmForgetpass.email.$untouched" class="text-danger">
+                    <small ng-show="frmForgetpass.email.$error.required">Không được để trống</small>
+                    <small ng-show="frmForgetpass.email.$error.email">Không đúng định dạng email</small>
+                  </div>
+              </div>
+              <div class="row mt-3">
+                <input type="text" ng-model="student.username" name="txtUsername" class=" form-control" placeholder="Username" required minlength="6">
+                <div ng-hide="frmForgetpass.txtUsername.$valid || frmForgetpass.txtUsername.$untouched" class="text-danger">
+                <small ng-show="frmForgetpass.txtUsername.$error.required" class="text-danger">Không được để trống</small>
+                <small ng-show="frmForgetpass.txtUsername.$error.minlength" ng-hide="frmForgetpass.txtUsername.$error.required" class="form-text text-danger">Tên tài khoản phải hơn 6 kí tự</small>
+                </div>
+            </div>
+                <div class="row text-center">
+                    <button class="btn btn-success">Xác nhận</button>
+                </div>
+                
+          </form>
+          
+        </div>
+    </div>
+    <div class="col-3"></div>
+</div>

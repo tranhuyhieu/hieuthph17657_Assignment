@@ -1,0 +1,86 @@
+<div class="col-12 col-sm-9 p-3">
+  <div class="row m-1"> 
+    <div class="col-12 col-xl-6 " ng-repeat="nametest in list_subject|limitTo:4:begin">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item"><a class="text-decoration-none text-dark" href="baithi.html">
+          <div class="card p-0 text-center shadow">
+            <div class="card-body">
+                  <img src="images/{{nametest.Logo}}" href="baithi.html">
+            </div>
+            <div class="card-footer">{{nametest.Name}}</div>
+          </div>
+        </a></li>
+      </ul>
+    </div>
+    
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <div class="col-12 text-center mt-2">
+        <ul class="pager list-unstyled"><!--trai,phai,dau,cuoi-->
+          <li>
+              <a class="text-decoration-none"  ng-click="first()">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-arrow-up-circle-fill" viewBox="0 0 16 16">
+                      <path d="M16 8A8 8 0 1 0 0 8a8 8 0 0 0 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z"/>
+                    </svg>
+              </a>
+              <a class="text-decoration-none"  ng-click="prev()">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-arrow-left-circle-fill" viewBox="0 0 16 16">
+                      <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"/>
+                    </svg>
+              </a>
+              <a class="text-decoration-none"  ng-click="next()">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-arrow-right-circle-fill" viewBox="0 0 16 16">
+                      <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
+                    </svg>
+              </a>
+              <a class="text-decoration-none"  ng-click="last()">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-arrow-down-circle-fill" viewBox="0 0 16 16">
+                      <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V4.5z"/>
+                    </svg>
+              </a>
+          </li>
+      </ul>
+      </div>
+  </div>
+  </div>
+
+</div>
+<div class="col-12 col-sm-3 mt-3">
+  <!-- <div class="card m-2">
+    <div class="row p-1">
+    <img class="col-xl-6 pt-3 pb-3" src="images/hotro1.png" alt="">
+    <div class="col-12 col-lg-6 p-4">
+      <ul class="list-unstyled">
+          <li><i>SĐT hỗ trợ:</i> 09999999999</li>
+          <li><i>PageFB:</i> http://hotro.com</li>
+          <li><a style="text-decoration:none;" href="lienhe.html"> Xem thêm...</a></li>
+        </ul>
+    </div>
+  </div>
+  </div>
+
+  <div class="card m-2 mt-6" >
+  <div class="row p-2">
+    <form action="">
+      <input type="text" class="form-control" placeholder="Keywords">
+    </form>
+  </div>
+  </div> -->
+ 
+
+  <div class="card m-2 mt-6" >
+        <div class="card-header ">
+          <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor" class="bi bi-list-ul" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm-3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+            </svg>
+          <strong >DANH MỤC</strong>
+        </div>
+        <div class="card-body p-0" >
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item" ng-repeat="sub in list_subject"><a class="text-decoration-none text-dark" href="#">{{sub.Name}}</a></li>
+          </ul>
+        </div>
+        
+  </div>
+</div>

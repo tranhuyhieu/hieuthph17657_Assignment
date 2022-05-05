@@ -1,0 +1,111 @@
+<div class="row bg-white pt-3">
+    <div class="col-3"></div>
+    <div class="col-6">
+        <div class="card mb-3" ng-init="studentqt.gender='true';studentqt.marks='0'">
+          <form class="card-body  ms-5 me-5" name="frmquantritk" ng-submit="onSubmitForm($event)">
+                <div class="row text-center">
+                <p><b> Quản trị tài khoản!</b></p>
+                </div>
+                <div class="row mt-3">
+                    <input type="text" ng-model="studentqt.fullname" name="txtFullname" class=" form-control" placeholder="Họ tên" required>
+                    <small ng-hide="frmquantritk.txtFullname.$valid || frmquantritk.txtFullname.$untouched" class="text-danger">Không được để trống</small>
+                
+                </div>
+                <div class="row mt-3">
+                    <input type="email" ng-model="studentqt.email" name="email" class="form-control" placeholder="Email" required>
+                    <div ng-hide="frmquantritk.email.$valid || frmquantritk.email.$untouched" class="text-danger">
+                      <small ng-show="frmquantritk.email.$error.required">Không được để trống</small>
+                      <small ng-show="frmquantritk.email.$error.email">Không đúng định dạng email</small>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                  <input type="text" ng-model="studentqt.username" name="txtUsername" class=" form-control" placeholder="Username" required minlength="6">
+                  <div ng-hide="frmquantritk.txtUsername.$valid || frmquantritk.txtUsername.$untouched" class="text-danger">
+                  <small ng-show="frmquantritk.txtUsername.$error.required" class="text-danger">Không được để trống</small>
+                  <small ng-show="frmquantritk.txtUsername.$error.minlength" ng-hide="frmquantritk.txtUsername.$error.required" class="form-text text-danger">Tên tài khoản phải hơn 6 kí tự</small>
+                  </div>
+              </div>
+                <div class="row mt-3">
+                    <input type="password" ng-model="studentqt.password" name="password" class="form-control" placeholder="Mật khẩu" required minlength="6">
+                    <div ng-hide="frmquantritk.password.$valid || frmquantritk.password.$untouched" class="text-danger">
+                    <small ng-show="frmquantritk.password.$error.required" class="text-danger">Không được để trống</small>
+                    <small ng-show="frmquantritk.password.$error.minlength" ng-hide="frmquantritk.password.$error.required" class="form-text text-danger">Mật khẩu phải hơn 6 kí tự</small>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                  <label for="">Giới tính:</label>
+                  <div class="form-check form-check-inline">
+                      <input ng-model="studentqt.gender" type="radio" class="form-check-input" id="gender" name="gender" value="true">
+                      <label class="form-check-label" for="gender">Nam</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                      <input ng-model="studentqt.gender" type="radio" class="form-check-input" id="gender2" name="gender" value="false">
+                      <label class="form-check-label" for="gender2">Nữ</label>
+                  </div>
+                </div>
+                <div class="row mt-3 text-start">
+                    <input name="birthday" ng-model="studentqt.birthday" type="text" id="birthday" class="form-control border-indigo" placeholder="Ngày sinh(yyyy-mm-dd)" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" required>
+                    <div ng-hide="frmquantritk.birthday.$valid || frmquantritk.birthday.$untouched" class="text-danger">
+                      <small ng-show="frmquantritk.birthday.$error.required" class="text-danger">Không được để trống</small>
+                      <small ng-show="frmquantritk.birthday.$error.pattern" ng-hide="frmquantritk.birthday.$error.required" class="form-text text-danger">Không đúng định dạng ngày sinh</small>
+                      </div>
+                </div>
+
+                <div class="row mt-3">
+                    <input name="schoolfee" ng-model="studentqt.schoolfee" type="text" id="schoolfee" class="form-control border-indigo" placeholder="Học phí" required min="2000000">
+                    <div ng-hide="frmquantritk.schoolfee.$valid || frmquantritk.schoolfee.$untouched" class="text-danger">
+                      <small ng-show="frmquantritk.schoolfee.$error.required" class="text-danger">Không được để trống</small>
+                      <small ng-show="frmquantritk.schoolfee.$error.min" ng-hide="frmquantritk.schoolfee.$error.required" class="text-danger">Học phí phải hơn 2 triệu</small>
+                      </div>
+                </div>
+                <div class="row mt-3">
+                    <input name="marks" ng-model="studentqt.marks" type="text" id="marks" class="form-control border-indigo" placeholder="Điểm" required min="0" max="10">
+                    <div ng-hide="frmquantritk.marks.$valid || frmquantritk.marks.$untouched" class="text-danger">
+                      <small ng-show="frmquantritk.marks.$error.required" class="text-danger">Không được để trống</small>
+                      <small ng-show="frmquantritk.marks.$error.min" ng-hide="frmquantritk.marks.$error.required" class="text-danger">Điểm từ 0 đến 10</small>
+                      </div>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-info" ng-disabled="frmquantritk.$invalid" ng-show="index==-1" ng-click="insert()">Thêm</button>
+                    <button class="btn btn-info" ng-disabled="frmquantritk.$invalid" ng-hide="index==-1" ng-click="update()">Sửa</button>
+                    <button class="btn btn-info" ng-click="cancel()">Hủy</button>
+                    <button class="btn btn-info" ng-click="clear()">Mới</button>
+                </div>
+          </form>
+          <div class="row col-12 table-responsive m-1">
+          <table class="table table-bordered">
+            <tr>
+                <th>Id</th>
+                <th>Họ và tên</th>
+                <th>Tài khoản</th>
+                <th>Password</th>
+                <th>Giới tính</th>
+                <th>Ngày sinh</th>
+                <th>Học phí</th>
+                <th>Điểm</th>
+                <th></th>
+            </tr>
+            <tr ng-repeat="st in students">
+                <td>{{st.id}}</td>
+                <td>{{st.fullname}}</td>
+                <td>{{st.username}}</td>
+                <td>{{st.password}}</td>
+                <td>
+                    <span ng-show="st.gender=='true'">Nam</span>
+                    <span ng-if="st.gender=='false'">Nữ</span>
+                </td>
+                <td>{{st.birthday}}</td>
+                <td>{{st.schoolfee}}</td>
+                <td>{{st.marks}}</td>
+                <td>
+                    <button class="btn btn-info" ng-click="edit($index)">Sửa</button>
+                    <button class="btn btn-danger" ng-click="onDelete(st.id)">Xoá</button>
+                </td>
+            </tr>
+            
+        </table>
+            </div>
+        </div>
+    </div>
+    <div class="col-3"></div>
+</div>

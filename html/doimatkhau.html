@@ -1,0 +1,44 @@
+<div class="row bg-white pt-3">
+            
+    <div class="col-3"></div>
+    <div class="col-6">
+        <div class="card mb-3" >
+          <form class="card-body ms-5 me-5" name="frmChangepass">
+                <div class="row">
+                <p class="text-center"><b> Đổi mật khẩu</b></p>
+                </div>
+                <p>Nhập tài khoản</p>
+                <input type="text" ng-model="username" name="txtUsername" class=" form-control" placeholder="Username" required minlength="6">
+                  <div ng-hide="frmChangepass.txtUsername.$valid || frmChangepass.txtUsername.$untouched" class="text-danger">
+                  <small ng-show="frmChangepass.txtUsername.$error.required" class="text-danger">Không được để trống</small>
+                  <small ng-show="frmChangepass.txtUsername.$error.minlength" ng-hide="frmChangepass.txtUsername.$error.required" class="form-text text-danger">Tên tài khoản phải hơn 6 kí tự</small>
+                  </div>
+                <p>Nhập mật khẩu cũ</p>
+                  <input type="password" ng-model="oldpassword" name="oldpassword" class="form-control" placeholder="Mật khẩu cũ" required minlength="6">
+                  <div ng-hide="frmChangepass.oldpassword.$valid || frmChangepass.oldpassword.$untouched" class="text-danger">
+                  <small ng-show="frmChangepass.oldpassword.$error.required" class="text-danger">Không được để trống</small>
+                  <small ng-show="frmChangepass.oldpassword.$error.minlength" ng-hide="frmChangepass.oldpassword.$error.required" class="form-text text-danger">Mật khẩu phải hơn 6 kí tự</small>
+                  </div>
+                <p>Nhập mật khẩu mới</p>
+                  <input type="password" ng-model="studentN.password" name="password" class="form-control" placeholder="Mật khẩu mới" required minlength="6">
+                  <div ng-hide="frmChangepass.password.$valid || frmChangepass.password.$untouched" class="text-danger">
+                  <small ng-show="frmChangepass.password.$error.required" class="text-danger">Không được để trống</small>
+                  <small ng-show="frmChangepass.password.$error.minlength" ng-hide="frmChangepass.password.$error.required" class="form-text text-danger">Mật khẩu phải hơn 6 kí tự</small>
+                  </div>
+                <p>Xác nhận mật khẩu</p>
+                  <input type="password" ng-model="xacnhan" name="xacnhan" class="form-control" placeholder="Xác nhận mật khẩu" required 
+                    check-password>
+                    <div ng-hide="frmChangepass.xacnhan.$valid || frmChangepass.xacnhan.$untouched" class="text-danger">
+                    <small ng-show="frmChangepass.xacnhan.$error.required" class="text-danger">Không được để trống</small>
+                    <small ng-show="frmChangepass.xacnhan.$error.check_pwd" ng-hide="frmChangepass.xacnhan.$error.required" class="text-danger">Mật khẩu nhập lại không khớp</small>
+                    </div>
+                <div class="row text-center mt-4">
+                    <button ng-click="change()" ng-disabled="frmChangepass.$invalid" class="btn btn-success">Xác nhận</button>
+                </div>
+                
+          </form>
+          
+        </div>
+    </div>
+    <div class="col-3"></div>
+</div>

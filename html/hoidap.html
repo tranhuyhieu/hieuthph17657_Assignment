@@ -1,0 +1,115 @@
+<div class="row bg-white">
+    <article class="col-12 col-xl-6 p-3 pe-5">
+        <h3>Các câu hỏi thường gặp</h3>
+        <div id="accordion">
+
+            <div class="card">
+              <div class="card-header">
+                <a class="btn" data-bs-toggle="collapse" href="#collapseOne">
+                    1. Cách đăng ký tài khoản thành viên?
+                </a>
+              </div>
+              <div id="collapseOne" class="collapse show" data-bs-parent="#accordion">
+                <div class="card-body">
+                    Chọn mục tài khoản trên thanh menu và chọn vào mục đăng ký, 
+                    sau đó nhập đầy đủ thông tin theo yêu cầu và cuối cùng nhấn đăng ký.
+                </div>
+              </div>
+            </div>
+          
+            <div class="card">
+              <div class="card-header">
+                <a class="collapsed btn" data-bs-toggle="collapse" href="#collapseTwo">
+                    2. Cách làm bài thi trắc nghiệm online?
+                </a>
+              </div>
+              <div id="collapseTwo" class="collapse" data-bs-parent="#accordion">
+                <div class="card-body">
+                    Chọn môn thi trong phần danh mục và hệ thống sẽ hiển thị màn hình bài thi. 
+                    Bắt đầu thi, thí sinh chọn đáp án mình cho là đúng đối với mỗi câu hỏi. 
+                    Sau khi đã hoàn thành bài thi, nhấn nộp bài và hệ thống sẽ trả về điểm số
+                </div>
+              </div>
+            </div>
+          
+            <div class="card">
+              <div class="card-header">
+                <a class="collapsed btn" data-bs-toggle="collapse" href="#collapseThree">
+                    3. Làm thế nào khi quên mật khẩu?
+                </a>
+              </div>
+              <div id="collapseThree" class="collapse" data-bs-parent="#accordion">
+                <div class="card-body">
+                    Chọn mục tài khoản trên thanh menu và chọn vào mục quên mật khẩu, 
+                    sau đó nhập đầy đủ thông tin theo yêu cầu và cuối cùng nhấn xác nhận.
+                </div>
+              </div>
+            </div>
+          
+          </div>
+          
+    </article>
+    <aside class="col-12 col-xl-6 mt-3">
+        <div class="container p-0">
+          <h3>Đặt câu hỏi</h3>
+            <div class="row">
+                <form action="" name="frmhoi">
+                    <div class="row mt-3">
+                      <label class="col-2">Họ tên <span class="text-danger">*</span></label>
+                      <div class="col-10">
+                          <input class="form-control" ng-model="fullname" type="text" name="fullname" class=" form-control" required>
+                          <small ng-hide="frmhoi.fullname.$valid || frmhoi.fullname.$untouched" class="text-danger">Không được để trống</small>
+                      </div>
+                    </div>
+                    <div class="row mt-3">
+                      <label class="col-2">Email<span class="text-danger">*</span></label>
+                      <div class="col-10">
+                        <input type="email" ng-model="email" name="email" class="form-control" required>
+                        <div ng-hide="frmhoi.email.$valid || frmhoi.email.$untouched" class="text-danger">
+                          <small ng-show="frmhoi.email.$error.required">Không được để trống</small>
+                          <small ng-show="frmhoi.email.$error.email">Không đúng định dạng email</small>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row mt-3">
+                        <label class="col-2">File </label>
+                        <div class="col-10">
+                        <input type="file" class="form-control-file">
+                    </div>
+                    </div>
+                    <div class="row mt-3">
+                        <label class="col-2">Thắc mắc</label>
+                        <div class="col-10">
+                            <select class="form-select" name="hoidap" id="hoidap">
+                                <option selected disabled> Bạn muốn trợ giúp gì?</option>
+                                <option value="taikhoan" href="#collapseOne">Vấn đề về tài khoản</option>
+                                <option value="thi">Vấn đề làm bài thi</option>
+                                <option value="khac">Khác</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <label class="col-2">Mô tả</label>
+                        <div class="col-10">
+                        <textarea class="form-control pl-" rows="3"></textarea>
+                        </div>
+                      </div>
+                    
+                      <div class="row">
+                          <div class="col-8"></div>
+                          <div class="col-4 p-4">
+                            <button type="button" class="btn btn-primary "><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-arrow-down-fill" viewBox="0 0 16 16">
+                                <path d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0zM9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1zm-1 4v3.793l1.146-1.147a.5.5 0 0 1 .708.708l-2 2a.5.5 0 0 1-.708 0l-2-2a.5.5 0 0 1 .708-.708L7.5 11.293V7.5a.5.5 0 0 1 1 0z"/>
+                              </svg>Gửi</button>
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-square-fill" viewBox="0 0 16 16">
+                                <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2z"/>
+                              </svg>Hủy</button>
+                    </div>
+                      </div>
+                    
+                    
+                </form>
+            </div>
+        </div>
+    </aside>
+</div>

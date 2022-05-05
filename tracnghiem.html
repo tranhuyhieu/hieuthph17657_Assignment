@@ -1,0 +1,73 @@
+<div class="container my-5" id="content">
+    <div class="row" ng-show="!inProgress">
+        <div class="col text-center">
+            <h3 class="text-primary">Start the Quiz</h3>
+            <button class="btn btn-primary" ng-click="start()">Start</button>
+        </div>
+    </div>
+    <div class="row" ng-show="inProgress">
+        <div class="row" ng-show="quizOver">
+            <div class="col text-center">
+                <h3 class="text-danger">Bạn đã hoàn thành bài quiz</h3>
+                <div id="diem"></div>
+                <button class="btn btn-primary" ng-click="reset()">Play again</button>
+                <button class="btn btn-primary" ng-click="back()">Back</button>
+            </div>
+        </div>
+        <div ng-show="!quizOver" ng-hide="quizOver">
+            <div class="row">
+                <div class="col text-center">
+                    <h2><i class="fas fa-clock" id="time" style="color: #e1a523;"></i></h2>
+                </div>
+            </div>
+        
+            <div class="row" ng-show="inProgress">
+                <div class="col">
+                    <div class="card border-info">
+                        <div class="card-header" style="background-color: #04fcdb;">
+                            <img src="images/logos/JAAV.png" width="30" class="border border-primary rounded-lg" alt="">
+                            <span>Lập trình
+                                Java
+                                nâng
+                                cao</span>
+                            <span class="float-right badge badge-dark" style="padding: .28em .7em;">{{id}}/10</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-text" style="font-weight: 500;">
+                                <label class="fw-bold">{{question}}</label>
+                                <hr>
+                                <div class="form-check" ng-repeat="option in answers">
+                                    
+                                    <label class="form-check-label" for="Radios1">
+                                        <input class="form-check-input" type="radio" name="answer" value="{{option.Id}}">
+                                        {{option.Text}}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div ng-show="answerMode">
+                                        <button class="btn btn-primary" ng-click="checkAnswer()">Submit</button>
+                                    </div>
+                                    <div ng-show="!answerMode">
+                                        <button class="btn btn-primary" ng-click="nextQuestion()">Next</button>
+                                        <span class="text-success" ng-show="correctAnswer">Correct!</span>
+                                        <span class="text-danger" ng-show="!correctAnswer">Incorrect!</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-9 pt-3">
+                                    <span class=" text-dark fw-bold"
+                                    >Điểm:
+                                    {{score}}/10</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
